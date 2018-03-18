@@ -14,27 +14,9 @@ BOT_NAME = 'WeXinCrawler'
 SPIDER_MODULES = ['WeXinCrawler.spiders']
 NEWSPIDER_MODULE = 'WeXinCrawler.spiders'
 
-# Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-# Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
-
-# Configure a delay for requests for the same website (default: 0)
-# See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
-# See also autothrottle settings and docs
 DOWNLOAD_DELAY = 30
-
-
-
-#DOWNLOADER_MIDDLEWARES = {
-#    'WeXinCrawler.middlewares.WexincrawlerDownloaderMiddleware': 543,
-#}
-
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
-
 
 ITEM_PIPELINES = {
   # 'WeXinCrawler.pipelines.MongDBPipeline': 300,
@@ -45,25 +27,23 @@ ITEM_PIPELINES = {
 
 # 公账号授权的信息的list，用于在爬虫被禁掉时，自动切换账户
 AUTH_LIST = [
-             {'Account':'1603255098@qq.com','PassWord':'woshi007008'},
-             {'Account':'1198746549@qq.com','PassWord':'woshi007008'}
+             {'Account':'160xxxxxx@qq.com','PassWord':'xxxxxxx'},
+             {'Account':'119xxxxxx@qq.com','PassWord':'xxxxxxx'}
             ]
-
+# 需要爬取的公帐号的名称，暂不支持同时爬取多个公帐号
 OFFICIAL_ACCOUNTS = '李叫兽'
 
+# 是否需要使用语音播报，爬虫运行状态,当为True时，需要安装 python win32com 模块
+SPEEK_ALLOW = False
 
 # MongDB数据库配置
 MONGO_HOST = "127.0.0.1"  # 主机IP
 MONGO_PORT = 27017  # 端口号
 MONGO_DB = "Weixin_Spider"  # 库名
 MONGO_COLLECTION = "weixin_article"  # collection名
-# MONGO_USER = "zhangsan"
-# MONGO_PSW = "123456"
-
-
 
 # MySQL数据库连接
 MYSQL_HOST = "127.0.0.1"
-MYSQL_DBNAME = "spiderdata"
+MYSQL_DBNAME = "Weixin_Spider"
 MYSQL_USER = "root"
-MYSQL_PASSWORD = "woshi007008"
+MYSQL_PASSWORD = "xxxxxx"
